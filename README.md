@@ -246,9 +246,12 @@ Once the decision is made, the circuit performs a "snap" action. If the input ex
 
 ## Result and Data analysis
 
----
+<details>
+<summary><strong>Results (click to expand)</strong></summary>
 
-## Questions and Answers
+ ![Pic s1](LAB%20PICS/s1.png)
+  ![Pic s2](LAB%20PICS/s2.png)
 
-[📄 Download PDF - Question and Answer](LAB%20PICS/QUESTION%20and%20ANSWER.pdf)
+ 
+</details>
 
