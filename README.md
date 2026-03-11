@@ -86,26 +86,14 @@ The continuous message signal is converted into a series of pulses using a Dual 
 Sampling Clock: A high-frequency pulse train (Sampling Signal) is used to open and close the switch at regular intervals.
 
 Sampled Output: The output consists of "slices" of the original message. We observe how the pulse amplitude follows the original waveform’s shape, creating a Pulse Amplitude Modulated (PAM) signal.
-
 <details>
-  <summary><strong>Picture 13</strong></summary>
+  <summary><strong>Wiring Diagram (click to expand)</strong></summary>
+
+  <!-- sampling results placeholder -->
 
   ![Pic 13](LAB%20PICS/13.jpg)
-
-</details>
-
-<details>
-  <summary><strong>Picture 14</strong></summary>
-
   ![Pic 14](LAB%20PICS/14.jpg)
-
-</details>
-
-<details>
-  <summary><strong>Picture 15</strong></summary>
-
   ![Pic 15](LAB%20PICS/15.jpg)
-
 </details>
 <details>
   <summary><strong>Results (click to expand)</strong></summary>
@@ -190,6 +178,7 @@ Digital Reception & Frame SyncBefore the decoder can translate the bits, it must
 D/A Conversion (The "Staircase" Phase)The Digital-to-Analog (D/A) Converter translates each 4-bit binary word back into a specific voltage level.For example, a 0111 might be converted to $0\text{V}$, while 1111 becomes $+5\text{V}$.At this stage, the signal looks like a "staircase" approximation (technically a Zero-Order Hold). While the general shape of the original wave is visible, it is jagged and filled with high-frequency "edges."Note: This staircase is essentially a raw Pulse Amplitude Modulated (PAM) signal waiting to be polished.
 
  Smoothing (Final Reconstruction)The final step uses a Low-Pass Filter (LPF) to act as a "sonic sander."The sharp corners of the staircase represent high-frequency noise that wasn't in the original message.The LPF blocks these rapid jumps and "connects the dots," smoothing the transitions to restore the original, continuous analog waveform.
+ <details>
  <summary><strong>Wiring Diagram (click to expand)</strong></summary>
 
 
@@ -198,9 +187,8 @@ D/A Conversion (The "Staircase" Phase)The Digital-to-Analog (D/A) Converter tran
   ![Pic 44-](LAB%20PICS/44-.jpg)
   ![Pic 45](LAB%20PICS/45.jpg)
 </details>
+<details>
 <summary><strong>Results (click to expand)</strong></summary>
-
-
   ![Pic 46](LAB%20PICS/46.png)
   ![Pic 47](LAB%20PICS/47.png)
   
@@ -220,12 +208,13 @@ The Result: Without the high frequencies, the edges can no longer be vertical. T
 Pulse Spreading and ISI Intersymbol Interference (ISI) is the "nightmare" of digital communications. As the bandwidth narrows further, the time it takes for a pulse to rise and fall increases.
 
 The "Smear": The energy of a single bit starts to leak into the time slot reserved for the next bit.The Receiver's Dilemma: If a '1' is still "falling" while the next '0' is supposed to be starting, the receiver sees a messy middle-voltage. It can no longer confidently decide if it's seeing a high or low signal, leading to bit errors.
-
+<details>
 <summary><strong>Wiring Diagram (click to expand)</strong></summary>
 
   ![Pic 48](LAB%20PICS/48.jpg)
   ![Pic 49](LAB%20PICS/49.jpg)
 </details>
+<details>
 <summary><strong>Results (click to expand)</strong></summary>
 
  ![Pic 50](LAB%20PICS/50.png)
@@ -240,12 +229,14 @@ The rounded, bandwidth-limited signal was compared against a precise, adjustable
 
 Digital Regeneration
 Once the decision is made, the circuit performs a "snap" action. If the input exceeds the threshold, the output instantly jumps to a clean, full-scale high voltage. Conversely, if the input falls below, the output drops to a clean ground or negative voltage. This process "squares up" the waveform, eliminating the gradual slopes and noise introduced by the low-pass filter. The final output is a brand-new, sharp-edged version of the original bitstream, ready for processing by a computer or decoder.
+<details>
 <summary><strong>Wiring Diagram (click to expand)</strong></summary>
 
-
   ![Pic 51](LAB%20PICS/51.jpg)
-  ![Pic 52](LAB%20PICS/52.JPG)
+
+  ![Pic 52](LAB%20PICS/52.jpg)
 </details>
+<details>
 <summary><strong>Results (click to expand)</strong></summary>
 
  ![Pic 53](LAB%20PICS/53.png)
@@ -253,5 +244,11 @@ Once the decision is made, the circuit performs a "snap" action. If the input ex
  
 </details>
 
+## Result and Data analysis
 
+---
+
+## Questions and Answers
+
+[📄 Download PDF - Question and Answer](LAB%20PICS/QUESTION%20and%20ANSWER.pdf)
 
